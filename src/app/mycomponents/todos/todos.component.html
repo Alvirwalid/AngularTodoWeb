@@ -1,0 +1,25 @@
+<div class="container">
+    <app-addtodo (todoAdd)="addTodo($event)"></app-addtodo>
+
+
+
+
+
+    <div *ngIf="todos.length!=0; else elseBlock">
+        <div *ngFor="let todo of todos;index as i">
+
+
+            <app-todoitem     [item]="todo" (deleteTodo)="delete($event)"     [index]="i"     (check)="checkBox($event,i)"></app-todoitem>
+    
+        </div>
+    </div>
+
+    
+
+
+    <ng-template #elseBlock>Todo Item Not Available At this Moment</ng-template>
+
+
+   
+
+</div>
